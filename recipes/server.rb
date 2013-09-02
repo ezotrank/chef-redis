@@ -12,3 +12,5 @@ redis_instance "server" do
     send(attribute, value)
   end
 end
+
+include_recipe "redis::supervisor"

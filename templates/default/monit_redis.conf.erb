@@ -1,0 +1,4 @@
+check process <%= node['redis']['service_name'] %> with pidfile <%= node['redis']['config']['pidfile'] %>
+  group <%= node['redis']['service_name'] %>
+  start program = "/etc/init.d/<%= node['redis']['service_name'] %> start"
+  stop  program = "/etc/init.d/<%= node['redis']['service_name'] %> stop"

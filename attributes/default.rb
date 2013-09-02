@@ -30,6 +30,7 @@ default.redis.conf_dir   = "/etc/redis"
 default.redis.init_style = "init"
 default.redis.symlink_binaries = false
 default.redis.ulimit = 10032
+default.redis.service_name = 'redis'
 
 # service user & group
 default.redis.user  = "redis"
@@ -72,3 +73,6 @@ default.redis.replication.enabled = false
 default.redis.replication.redis_replication_role = 'master' # or slave
 default.redis.replication.tunnel.enabled = false
 default.redis.replication.tunnel.accept_port = 46379
+
+# supervisor
+default.redis.supervisor = false # can be 'monit'

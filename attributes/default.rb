@@ -27,7 +27,13 @@ default.redis.source.version = "2.6.14"
 default.redis.package.version = false
 default.redis.src_dir    = "/usr/src/redis"
 default.redis.dst_dir    = "/opt/redis"
-default.redis.conf_dir   = "/etc/redis"
+if node.platform_family == "rhel"
+  default.redis.conf_dir = "/etc"
+  default.redis.conf_name = "redis.conf"
+else
+  default.redis.conf_dir = "/etc/redis"
+  default.redis.conf_name = "server.conf"
+end
 default.redis.init_style = "init"
 default.redis.symlink_binaries = false
 default.redis.ulimit = 10032

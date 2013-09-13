@@ -13,7 +13,7 @@ def load_current_resource
   if new_resource.slaveof_ip || new_resource.slaveof
     new_resource.slaveof      new_resource.slaveof || "#{new_resource.slaveof_ip} #{new_resource.slaveof_port}"
   end
-    
+
   new_resource.configure_no_appendfsync_on_rewrite
   new_resource.configure_slowlog
   new_resource.configure_list_max_ziplist
@@ -35,7 +35,7 @@ action :create do
   create_directories
   if node.platform_family == "rhel" && node.redis.install_type == "package"
     # For RHEL package installs, use the RPM's init script and set REDIS_USER
-    create_sysconfig_file  
+    create_sysconfig_file
   else
     create_service_script
   end
@@ -90,7 +90,7 @@ end
 
 def create_config
   redis_service_name = redis_service
-  template "#{new_resource.conf_dir}/#{new_resource.name}.conf" do
+  template "#{new_resource.conf_dir}/redis.conf" do
     source "redis.conf.erb"
     owner "root"
     group "root"

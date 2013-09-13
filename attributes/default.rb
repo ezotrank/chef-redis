@@ -24,6 +24,7 @@ default.redis.package_name   = "redis-server"
 default.redis.source.sha     = "fdf61c693e5c4908b4bb44c428d4a2b7568f05566c144c58fdf19c5cb12a9caf"
 default.redis.source.url     = "http://redis.googlecode.com/files"
 default.redis.source.version = "2.6.14"
+default.redis.package.version = false
 default.redis.src_dir    = "/usr/src/redis"
 default.redis.dst_dir    = "/opt/redis"
 default.redis.conf_dir   = "/etc/redis"

@@ -3,6 +3,7 @@ default.redis.config.appendonly      = false
 default.redis.config.appendfsync     = "everysec"
 default.redis.config.daemonize       = true
 default.redis.config.databases       = 16
+default.redis.config.maxmemory       = '1gb'
 default.redis.config.dbfilename      = "dump.rdb"
 default.redis.config.dir             = "/var/lib/redis"
 default.redis.config.bind            = "127.0.0.1"

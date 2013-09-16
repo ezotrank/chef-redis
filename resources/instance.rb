@@ -12,6 +12,7 @@ attribute :appendonly,     :kind_of => [TrueClass, FalseClass], :default => fals
 attribute :appendfsync,    :kind_of => String, :default => "everysec"
 attribute :daemonize,      :kind_of => [TrueClass, FalseClass], :default => true
 attribute :databases,      :kind_of => Fixnum, :default => 16
+attribute :maxmemory,      :kind_of => String#, :default => "#{name}.rdb"
 attribute :dbfilename,     :kind_of => String#, :default => "#{name}.rdb"
 attribute :dir,            :kind_of => String, :default => "/var/lib/redis"
 attribute :conf_dir,       :kind_of => String, :default => "/etc/redis"
@@ -68,6 +69,7 @@ state_attrs(
  :appendonly,
  :appendfsync,
  :daemonize,
+ :maxmemory,
  :databases,
  :dbfilename,
  :dir,
@@ -81,7 +83,7 @@ state_attrs(
  :save,
  :activerehashing,
  :slaveof,
-            
+
  :slowlog_log_slower_than,
  :slowlog_max_len,
 

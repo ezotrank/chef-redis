@@ -83,3 +83,4 @@ default.redis.replication.tunnel.accept_port = 46379
 
 # supervisor
 default.redis.supervisor = false # can be 'monit'
+default['redis']['ext_config']['maxmemory-policy'] = nil

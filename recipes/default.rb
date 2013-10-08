@@ -16,3 +16,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+case node.redis.install_type
+when "package"
+  include_recipe "redis::server_package"
+when "source"
+  include_recipe "redis::server_source"
+end
+
+service node['redis']['service_name'] do
+  supports :status => true, :restart => true
+  action [ :enable, :start ]
+end
+
+template node['redis']['config_path'] do
+  source 'redis.conf.erb'
+  variables 'config' => node['redis']['config']
+  notifies :restart, resources(:service => node['redis']['service_name']), :immediately
+end
+
+include_recipe "redis::supervisor"

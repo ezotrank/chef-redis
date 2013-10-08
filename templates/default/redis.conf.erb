@@ -1,8 +1,4 @@
 <% @config.each do |key, value| -%>
   <% next if value.nil? -%>
-<%= ChefRedis.template_format(key, value) %>
-<% end %>
-
-<% if node['redis']['ext_config']['maxmemory-policy'] %>
-maxmemory-policy <%= node['redis']['ext_config']['maxmemory-policy'] %>
+<%= key %> <%= value %>
 <% end %>

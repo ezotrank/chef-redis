@@ -14,8 +14,9 @@ recipe "redis::server_source", "Uses the recipe crumbs in the Redis cookbook to 
   supports os
 end
 
-%w[ build-essential runit yum ].each do |cookbook|
+%w[ build-essential runit].each do |cookbook|
   depends cookbook
 end
 
+depends 'yum', '>= 3.0.5'
 recommends 'monit'

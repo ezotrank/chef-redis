@@ -21,9 +21,9 @@
 # installation
 default.redis.install_type   = "package"
 default.redis.package_name   = "redis-server"
-default.redis.source.sha     = "fdf61c693e5c4908b4bb44c428d4a2b7568f05566c144c58fdf19c5cb12a9caf"
+default.redis.source.sha     = "6b6602321536401b8b46aa05ec509141506b689b420675685ffe147ae08c0c86"
 default.redis.source.url     = "http://redis.googlecode.com/files"
-default.redis.source.version = "2.6.14"
+default.redis.source.version = "2.8.4"
 default.redis.package.version = false
 default.redis.src_dir    = "/usr/src/redis"
 default.redis.dst_dir    = "/opt/redis"

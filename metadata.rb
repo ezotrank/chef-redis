@@ -18,5 +18,5 @@ end
   depends cookbook
 end
 
-depends 'yum', '>= 3.0.0'
+depends 'yum', '~> 3.0'
 recommends 'monit'
